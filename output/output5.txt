@@ -1,0 +1,15 @@
+Begin Transaction T1 ,record created in Transaction table
+Item Y is read locked by Transaction T1
+Item Z is read locked by Transaction T1
+Begin Transaction T2 ,record created in Transaction table
+Transaction T2 granted read lock on item Y
+Begin Transaction T3 ,record created in Transaction table
+Transaction T3 granted read lock on item Y
+Item Z is upgraded to write lock on Transaction T1
+Transaction T3   aborted
+Transaction T1 committed successfully
+TransactionT3 is aborted
+Item Y is upgraded to write lock on Transaction T2
+Item X is read locked by Transaction T2
+Item X is upgraded to write lock on Transaction T2
+Transaction T2 committed successfully
